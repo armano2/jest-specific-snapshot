@@ -9,8 +9,10 @@
     "babel": "babel src -d dist",
     "lint": "eslint .",
     "lint-fix": "npm run lint -- --fix",
-    "prepare": "npm run babel"
+    "prepare": "npm run babel",
+    "install": "npm run prepare"
   },
+  "files": ["*"],
   "jest": {
     "cacheDirectory": "./.jest/cache"
   },
