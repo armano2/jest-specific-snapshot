@@ -15,7 +15,7 @@
     "cacheDirectory": "./.jest/cache"
   },
   "dependencies": {
-    "jest-snapshot": "^24.1.0"
+    "jest-snapshot": "^24.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -31,8 +31,8 @@
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-teamcity": "^2.1.0",
-    "jest": "^24.1.0",
-    "jest-cli": "^24.1.0",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
     "prettier": "^1.16.4"
   },
   "peerDependencies": {
