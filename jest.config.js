@@ -6,5 +6,5 @@ module.exports = {
   collectCoverage: false,
   collectCoverageFrom: ['lib/**/*.js'],
   moduleFileExtensions: ['js', 'json', 'node'],
-  coverageReporters: ['text-summary', 'lcov']
+  coverageReporters: ['text-summary', 'lcov'],
 };
