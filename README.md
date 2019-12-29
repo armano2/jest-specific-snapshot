@@ -23,13 +23,16 @@ require('jest-specific-snapshot');
 
 test('test', () => {
   // provides snapshot file with absolute file
-  const pathToSnap = path.resolve(process.cwd(), './example/specific/dir/my.shot');
+  const pathToSnap = path.resolve(
+    process.cwd(),
+    './tests/specific/dir/my.shot'
+  );
   expect(100).toMatchSpecificSnapshot(pathToSnap);
 
   //same snapshot but with relative file
   expect(14).toMatchSpecificSnapshot('./specific/dir/my.shot');
 
-  // another snapshot file in the same test
+  // another snapshot file in the same tests
   expect(19).toMatchSpecificSnapshot('./specific/another_dir/another.shot');
 });
 ```
@@ -44,7 +47,7 @@ addSerializer(/* Add custom serializer here */);
 
 test('test', () => {
   expect(/* thing that matches the custom serializer */).toMatchSpecificSnapshot(
-    './specific/custom_serializer/test.shot'
+    './specific/custom_serializer/tests.shot'
   );
 });
 ```
@@ -52,7 +55,8 @@ test('test', () => {
 ## Extend `toMatchSpecificSnapshot`
 
 ```js
-const toMatchSpecificSnapshot = require('jest-specific-snapshot').toMatchSpecificSnapshot;
+const toMatchSpecificSnapshot = require('jest-specific-snapshot')
+  .toMatchSpecificSnapshot;
 
 expect.extend({
   toMatchDecoratedSpecificSnapshot(received, snapshotFile) {

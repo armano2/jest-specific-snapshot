@@ -1,5 +1,5 @@
-import path from 'path';
-import { addSerializer, toMatchSpecificSnapshot } from '../src/index';
+const { resolve } = require('path');
+const { addSerializer, toMatchSpecificSnapshot } = require('../lib');
 
 expect.extend({
   toMatchExtendedSpecificSnapshot(received, snapshotFile) {
@@ -7,8 +7,8 @@ expect.extend({
   },
 });
 
-test('test that creates multiple snapshots', () => {
-  const pathToSnap = path.resolve(process.cwd(), './example/specific/dir/my.shot');
+test('tests that creates multiple snapshots', () => {
+  const pathToSnap = resolve(process.cwd(), './tests/specific/dir/my.shot');
   expect(100).toMatchSpecificSnapshot(pathToSnap);
 
   expect(14).toMatchSpecificSnapshot('./specific/dir/my.shot');
@@ -25,13 +25,17 @@ test('with custom serializer', () => {
   addSerializer(customSerializer);
 
   expect(11).toMatchSpecificSnapshot('./specific/custom_serializer/test1.shot');
-  expect(121).toMatchSpecificSnapshot('./specific/custom_serializer/test2.shot');
-
-  expect('this value value will be serialized with the default serializer').toMatchSpecificSnapshot(
-    './specific/custom_serializer/test3.shot'
+  expect(121).toMatchSpecificSnapshot(
+    './specific/custom_serializer/test2.shot'
   );
+
+  expect(
+    'this value value will be serialized with the default serializer'
+  ).toMatchSpecificSnapshot('./specific/custom_serializer/test3.shot');
 });
 
 test('with extended matcher', () => {
-  expect(11).toMatchExtendedSpecificSnapshot('./specific/extended_matcher/test1.shot');
+  expect(11).toMatchExtendedSpecificSnapshot(
+    './specific/extended_matcher/test1.shot'
+  );
 });

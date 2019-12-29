@@ -4,3 +4,5 @@ dist
 .jest
 *.lock
 package-lock.json
+tsconfig.tsbuildinfo
+.tgz

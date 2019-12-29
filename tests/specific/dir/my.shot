@@ -3,3 +3,7 @@
 exports[`test that creates multiple snapshots 1`] = `100`;
 
 exports[`test that creates multiple snapshots 2`] = `14`;
+
+exports[`tests that creates multiple snapshots 1`] = `100`;
+
+exports[`tests that creates multiple snapshots 2`] = `14`;

@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test that creates multiple snapshots 1`] = `19`;
+
+exports[`tests that creates multiple snapshots 1`] = `19`;
